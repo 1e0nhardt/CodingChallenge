@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca4r3xw4mkjtr"]
+
+[ext_resource type="Script" path="res://src/02_menger_sponge_fractal/menger_sponge_fractal.gd" id="1_6u7a3"]
+
+[sub_resource type="Sky" id="Sky_lpmj3"]
+
+[sub_resource type="Environment" id="Environment_mfe05"]
+background_mode = 1
+sky = SubResource("Sky_lpmj3")
+ambient_light_source = 2
+ambient_light_color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a7nhr"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_8wlpw"]
+transform_format = 1
+use_colors = true
+use_custom_data = true
+mesh = SubResource("BoxMesh_a7nhr")
+
+[node name="MengerSpongeFractal" type="Node3D"]
+script = ExtResource("1_6u7a3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mfe05")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.975917, -0.121668, 0.181062, 0, 0.830012, 0.557745, -0.218143, -0.544313, 0.810023, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9494)
+size = 2.0
+
+[node name="BoxAnchor" type="Node3D" parent="."]
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="BoxAnchor"]
+multimesh = SubResource("MultiMesh_8wlpw")
