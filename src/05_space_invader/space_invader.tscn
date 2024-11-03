@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://defoq3deph6ts"]
+
+[ext_resource type="Script" path="res://src/05_space_invader/space_invader.gd" id="1_uuy2e"]
+[ext_resource type="Script" path="res://src/05_space_invader/ship.gd" id="2_o7fk5"]
+
+[node name="SpaceInvader" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uuy2e")
+
+[node name="Ship" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("2_o7fk5")
+
+[node name="Flowers" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="Drops" type="Control" parent="."]
+anchors_preset = 0

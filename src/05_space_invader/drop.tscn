@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyrt1mvxtnfsb"]
+
+[ext_resource type="Script" path="res://src/05_space_invader/drop.gd" id="1_xqok4"]
+
+[node name="Drop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 688.0
+offset_top = 644.0
+offset_right = 688.0
+offset_bottom = 644.0
+script = ExtResource("1_xqok4")
