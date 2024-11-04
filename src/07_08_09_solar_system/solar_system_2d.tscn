@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjs6gga1xo608"]
+
+[ext_resource type="Script" path="res://src/07_08_09_solar_system/solar_system_2d.gd" id="1_3woys"]
+[ext_resource type="PackedScene" uid="uid://cei0d4ywnqq6" path="res://src/07_08_09_solar_system/planet.tscn" id="2_rj17k"]
+
+[node name="SolarSystem2D" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3woys")
+
+[node name="Planet" parent="." instance=ExtResource("2_rj17k")]
+layout_mode = 1
+offset_left = 576.0
+offset_top = 324.0
+offset_right = -576.0
+offset_bottom = -324.0

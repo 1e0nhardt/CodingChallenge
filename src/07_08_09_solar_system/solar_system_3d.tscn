@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2qng3kfjonye"]
+
+[ext_resource type="Script" path="res://src/07_08_09_solar_system/solar_system_3d.gd" id="1_ifnxn"]
+[ext_resource type="PackedScene" uid="uid://1rdy04ifsm17" path="res://src/07_08_09_solar_system/planet_3d.tscn" id="2_pyrko"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_14v0w"]
+radius = 0.05
+height = 0.1
+
+[node name="SolarSystem3D" type="Node3D"]
+script = ExtResource("1_ifnxn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.826098, 0.291922, -0.48202, 0, 0.855364, 0.518027, 0.563526, -0.427941, 0.706615, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999864, -0.0121552, -0.0111729, 0.0165101, 0.736127, 0.676642, -9.96772e-09, -0.676735, 0.736227, -5.96046e-08, 2.90024, 7.00544)
+size = 10.0
+
+[node name="Planet3D" parent="." instance=ExtResource("2_pyrko")]
+
+[node name="Center" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_14v0w")

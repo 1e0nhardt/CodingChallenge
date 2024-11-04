@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://1rdy04ifsm17"]
+
+[ext_resource type="Texture2D" uid="uid://cc7eb0nae7squ" path="res://src/07_08_09_solar_system/earthmap1k.jpg" id="1_b7ktb"]
+[ext_resource type="Script" path="res://src/07_08_09_solar_system/planet_3d.gd" id="1_pf1wr"]
+[ext_resource type="Texture2D" uid="uid://cbv31wj4mhhwq" path="res://src/07_08_09_solar_system/earthspec1k.jpg" id="2_r0xlx"]
+[ext_resource type="Texture2D" uid="uid://g3tbno4j5jvn" path="res://src/07_08_09_solar_system/earthbump1k_normal.png" id="3_pd8ls"]
+[ext_resource type="Texture2D" uid="uid://beri4vriv33vg" path="res://src/07_08_09_solar_system/earthbump1k.jpg" id="3_rectb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_elp5d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5415"]
+albedo_texture = ExtResource("1_b7ktb")
+metallic = 1.0
+metallic_texture = ExtResource("2_r0xlx")
+normal_enabled = true
+normal_texture = ExtResource("3_pd8ls")
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_rectb")
+
+[node name="Planet3D" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_elp5d")
+surface_material_override/0 = SubResource("StandardMaterial3D_u5415")
+script = ExtResource("1_pf1wr")
