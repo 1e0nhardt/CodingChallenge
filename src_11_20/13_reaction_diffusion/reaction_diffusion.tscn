@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4dgdvm5hltp7"]
+
+[ext_resource type="Script" path="res://src_11_20/13_reaction_diffusion/reaction_diffusion.gd" id="1_ooddc"]
+
+[node name="ReactionDiffusion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ooddc")
+
+[node name="Canvas" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
