@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c54sdsgu8s4pq"]
+
+[ext_resource type="Script" path="res://src_21_30/mandelbrot_set/mandelbrot_set.gd" id="1_nyp3f"]
+[ext_resource type="Shader" path="res://src_21_30/mandelbrot_set/mandelbrot_set.gdshader" id="1_smo8a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r4n1y"]
+shader = ExtResource("1_smo8a")
+shader_parameter/mouse_pos = null
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5y25m"]
+
+[node name="MandelbrotSet" type="TextureRect"]
+material = SubResource("ShaderMaterial_r4n1y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_5y25m")
+stretch_mode = 5
+script = ExtResource("1_nyp3f")
