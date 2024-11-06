@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf0b6ji13k08d"]
+
+[ext_resource type="Script" path="res://src_11_20/12_lorenz_attractor/lorenz_attractor.gd" id="1_rli6q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqaos"]
+sky_top_color = Color(0.0544836, 0.0744272, 0.102161, 1)
+sky_horizon_color = Color(0.563621, 0.560857, 0.55879, 1)
+ground_horizon_color = Color(0.563621, 0.560857, 0.55879, 1)
+
+[sub_resource type="Sky" id="Sky_6mexg"]
+sky_material = SubResource("ProceduralSkyMaterial_aqaos")
+
+[sub_resource type="Environment" id="Environment_s0akg"]
+background_mode = 1
+background_color = Color(0.783523, 0.783523, 0.783523, 1)
+sky = SubResource("Sky_6mexg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjbtg"]
+vertex_color_use_as_albedo = true
+
+[node name="LorenzAttractor" type="Node3D"]
+script = ExtResource("1_rli6q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s0akg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2407, 112.146)
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_pjbtg")
